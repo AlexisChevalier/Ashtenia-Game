@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:viewModels="clr-namespace:_2NET_Gui.ViewModels"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="700"
+      d:DesignHeight="650" d:DesignWidth="700"
 	Title="MainGameView">
 
     <Page.Resources>
@@ -16,17 +16,36 @@
         <TabControl HorizontalAlignment="Left" Margin="0,41,0,0" Width="203">
             <TabItem Header="Armes">
                 <Grid Background="#FFE5E5E5" Margin="0,0,1,0">
-                    <ListBox/>
+                    <ListView ItemsSource="{Binding Weapons}" SelectedItem="{Binding SelectedWeapon}" Height="253" VerticalAlignment="Top">
+                        <ListView.View >
+                            <GridView AllowsColumnReorder="False"  >
+                                <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Name}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </Grid>
             </TabItem>
             <TabItem Header="Objets" Height="23" VerticalAlignment="Bottom">
                 <Grid Background="#FFE5E5E5">
-                    <ListBox/>
+                    <ListView ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" Height="253" VerticalAlignment="Top">
+                        <ListView.View >
+                            <GridView AllowsColumnReorder="False">
+                                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding ObjectType}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </Grid>
             </TabItem>
         </TabControl>
         <Rectangle Fill="#FFF4F4F5" Height="41" Stroke="Black" VerticalAlignment="Top"/>
-        <ListBox Margin="203,0,0,0" Height="139" VerticalAlignment="Bottom"/>
+        <ListBox Margin="203,0,0,0" Height="139" VerticalAlignment="Bottom" ItemsSource="{Binding MessageList}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding}"></Label>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+            
         <Grid Margin="203,41,0,139" Width="320" Height="320">
             <ItemsControl x:Name="_board" ItemsSource="{Binding Grid}" HorizontalAlignment="Center" Width="320" Height="320" VerticalAlignment="Center">
                 <ItemsControl.ItemsPanel>
@@ -36,20 +55,20 @@
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border BorderBrush="Black" Margin="0" BorderThickness="1">
+                        <Border BorderBrush="Black" Margin="0" BorderThickness="0">
                             <Grid>
                                 <Grid.Background>
                                     <ImageBrush Stretch="None" ImageSource="{Binding ImageSource}" AlignmentY="Top" AlignmentX="Center"/>
                                 </Grid.Background>
-                                <TextBlock x:Name="_tb" Text="{Binding}" FontSize="40" 
-                                       VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <!--<TextBlock x:Name="_tb" Text="{Binding}" FontSize="40" 
+                                       VerticalAlignment="Center" HorizontalAlignment="Center" />-->
                             </Grid>
                         </Border>
-                        <DataTemplate.Triggers>
+                        <!--<DataTemplate.Triggers>
                             <DataTrigger Binding="{Binding}" Value="Empty">
                                 <Setter Property="Opacity" Value="0" TargetName="_tb" />
                             </DataTrigger>
-                        </DataTemplate.Triggers>
+                        </DataTemplate.Triggers>-->
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>

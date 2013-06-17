@@ -8,6 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icon.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/images/ground_magical_city.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/images/ground_magical_forest.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/images/ground_magical_river.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/images/ground_magical_tunels.png")]
 
 

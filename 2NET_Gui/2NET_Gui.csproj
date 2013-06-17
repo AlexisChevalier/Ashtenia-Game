@@ -162,6 +162,29 @@
   <ItemGroup>
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Images\ground_good_city.png" />
+    <Resource Include="Ressources\Images\ground_good_coast.png" />
+    <Resource Include="Ressources\Images\ground_good_forest.png" />
+    <Resource Include="Ressources\Images\ground_good_lake.png" />
+    <Resource Include="Ressources\Images\ground_good_plain.png" />
+    <Resource Include="Ressources\Images\ground_good_small_city.png" />
+    <Resource Include="Ressources\Images\ground_mountain_pass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Images\ground_arid_plain.png" />
+    <Resource Include="Ressources\Images\ground_bad_city.png" />
+    <Resource Include="Ressources\Images\ground_bad_lake.png" />
+    <Resource Include="Ressources\Images\ground_bad_mountain_pass.png" />
+    <Resource Include="Ressources\Images\ground_bad_underground.png" />
+    <Resource Include="Ressources\Images\ground_broken_city.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Images\ground_magical_city.png" />
+    <Resource Include="Ressources\Images\ground_magical_forest.png" />
+    <Resource Include="Ressources\Images\ground_magical_river.png" />
+    <Resource Include="Ressources\Images\ground_magical_tunels.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

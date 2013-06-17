@@ -5,8 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:viewModels="clr-namespace:_2NET_Gui.ViewModels"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="700"
-      MinHeight="500" MinWidth="700"
+      d:DesignHeight="650" d:DesignWidth="700"
+      MinHeight="650" MinWidth="700"
 	Title="PlayerSelectionView">
 
     <Page.Resources>
@@ -21,13 +21,13 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ListView ItemsSource="{Binding Players}" SelectedItem="{Binding SelectedPlayer}" HorizontalAlignment="Left" Width="350" Height="253" VerticalAlignment="Top" Grid.Row="1">
-            <ListView.View >
-                <GridView AllowsColumnReorder="False"  >
-                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="345"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <ListBox ItemsSource="{Binding Players}" SelectedItem="{Binding SelectedPlayer}" HorizontalAlignment="Left" Width="350" Height="253" VerticalAlignment="Top" Grid.Row="1">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Name}"></Label>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Button Content="Charger"  Command="{Binding LoadPlayerCommand}" HorizontalAlignment="Left" Margin="68,367,0,0" VerticalAlignment="Top" Width="75" Height="22" Grid.Row="1"/>
         <Button Content="Supprimer"  Command="{Binding DeletePlayerCommand}" HorizontalAlignment="Left" Margin="215,367,0,0" VerticalAlignment="Top" Width="75" Height="22" Grid.Row="1"/>
         <Label Content="Chargez un Personnage existant" HorizontalAlignment="Center" VerticalAlignment="Center" Width="290" FontSize="20"/>

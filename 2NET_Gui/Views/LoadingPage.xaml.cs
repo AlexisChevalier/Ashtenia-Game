@@ -19,8 +19,6 @@ namespace _2NET_Gui.Views
 {
     public partial class LoadingPage : Page
     {
-        private System.Timers.Timer timer;
-
         public LoadingPage()
         {
             InitializeComponent();
