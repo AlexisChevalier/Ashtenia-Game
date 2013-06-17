@@ -1,0 +1,6 @@
+﻿<Window x:Class="_2NET_Gui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ashtenia" Height="540" Width="700"
+        MinHeight="540" MinWidth="700" Icon="icon.ico">
+</Window>

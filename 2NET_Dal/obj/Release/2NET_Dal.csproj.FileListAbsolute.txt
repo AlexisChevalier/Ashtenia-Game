@@ -1,0 +1,10 @@
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Dal\bin\Release\2NET_Dal.dll.config
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Dal\bin\Release\2NET_Dal.dll
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Dal\bin\Release\2NET_Dal.pdb
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Dal\bin\Release\EntityFramework.dll
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Dal\bin\Release\EntityFramework.xml
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Dal\bin\Release\fr\EntityFramework.resources.dll
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Dal\obj\Release\_2NET_Dal.Migrations.Initial.resources
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Dal\obj\Release\2NET_Dal.csproj.GenerateResource.Cache
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Dal\obj\Release\2NET_Dal.dll
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Dal\obj\Release\2NET_Dal.pdb

@@ -1,0 +1,11 @@
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\bin\Release\2NET_Project.exe.config
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\bin\Release\2NET_Project.exe
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\bin\Release\2NET_Project.pdb
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\bin\Release\2NET_Dal.dll
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\bin\Release\EntityFramework.dll
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\bin\Release\2NET_Dal.pdb
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\bin\Release\EntityFramework.xml
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\bin\Release\fr\EntityFramework.resources.dll
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\obj\Release\2NET_Project.csprojResolveAssemblyReference.cache
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\obj\Release\2NET_Project.exe
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\obj\Release\2NET_Project.pdb

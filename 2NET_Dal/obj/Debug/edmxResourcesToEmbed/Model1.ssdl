@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ASHTENIAModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ASHTENIAModelStoreContainer">
+    <EntitySet Name="Cells" EntityType="ASHTENIAModel.Store.Cells" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Items" EntityType="ASHTENIAModel.Store.Items" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ItemTypes" EntityType="ASHTENIAModel.Store.ItemTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Players" EntityType="ASHTENIAModel.Store.Players" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Weapons" EntityType="ASHTENIAModel.Store.Weapons" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_dbo_Players_dbo_Cells_CurrentCell_Id" Association="ASHTENIAModel.Store.FK_dbo_Players_dbo_Cells_CurrentCell_Id">
+      <End Role="Cells" EntitySet="Cells" />
+      <End Role="Players" EntitySet="Players" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Items_dbo_ItemTypes_ObjectType_Id" Association="ASHTENIAModel.Store.FK_dbo_Items_dbo_ItemTypes_ObjectType_Id">
+      <End Role="ItemTypes" EntitySet="ItemTypes" />
+      <End Role="Items" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Items_dbo_Players_Player_Id" Association="ASHTENIAModel.Store.FK_dbo_Items_dbo_Players_Player_Id">
+      <End Role="Players" EntitySet="Players" />
+      <End Role="Items" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Weapons_dbo_Players_Player_Id" Association="ASHTENIAModel.Store.FK_dbo_Weapons_dbo_Players_Player_Id">
+      <End Role="Players" EntitySet="Players" />
+      <End Role="Weapons" EntitySet="Weapons" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cells">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PosX" Type="int" Nullable="false" />
+    <Property Name="PosY" Type="int" Nullable="false" />
+    <Property Name="MonsterRate" Type="int" Nullable="false" />
+    <Property Name="MonsterGroup" Type="int" Nullable="false" />
+    <Property Name="CanMoveTo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Visited" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Player_Id" Type="int" Nullable="false" />
+    <Property Name="ObjectType_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ItemTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HPRestoreValue" Type="int" Nullable="false" />
+    <Property Name="DefenseBoost" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="AttackStrenghtBonus" Type="int" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="Level" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Players">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Xp" Type="int" Nullable="false" />
+    <Property Name="Hp" Type="int" Nullable="false" />
+    <Property Name="MaxHp" Type="int" Nullable="false" />
+    <Property Name="CurrentCellId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Weapons">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="AttackRate" Type="int" Nullable="false" />
+    <Property Name="MissRate" Type="int" Nullable="false" />
+    <Property Name="Player_Id" Type="int" Nullable="false" />
+    <Property Name="Damage" Type="int" Nullable="false" />
+    <Property Name="Level" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_Players_dbo_Cells_CurrentCell_Id">
+    <End Role="Cells" Type="ASHTENIAModel.Store.Cells" Multiplicity="0..1" />
+    <End Role="Players" Type="ASHTENIAModel.Store.Players" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cells">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Players">
+        <PropertyRef Name="CurrentCellId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Items_dbo_ItemTypes_ObjectType_Id">
+    <End Role="ItemTypes" Type="ASHTENIAModel.Store.ItemTypes" Multiplicity="0..1" />
+    <End Role="Items" Type="ASHTENIAModel.Store.Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Items">
+        <PropertyRef Name="ObjectType_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Items_dbo_Players_Player_Id">
+    <End Role="Players" Type="ASHTENIAModel.Store.Players" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Items" Type="ASHTENIAModel.Store.Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Players">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Items">
+        <PropertyRef Name="Player_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Weapons_dbo_Players_Player_Id">
+    <End Role="Players" Type="ASHTENIAModel.Store.Players" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Weapons" Type="ASHTENIAModel.Store.Weapons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Players">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Weapons">
+        <PropertyRef Name="Player_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

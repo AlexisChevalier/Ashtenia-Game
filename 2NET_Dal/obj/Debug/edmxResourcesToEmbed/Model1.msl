@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ASHTENIAModelStoreContainer" CdmEntityContainer="ASHTENIA">
+    <EntitySetMapping Name="Cells">
+      <EntityTypeMapping TypeName="IsTypeOf(ASHTENIAModel.Cells)">
+        <MappingFragment StoreEntitySet="Cells">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PosX" ColumnName="PosX" />
+          <ScalarProperty Name="PosY" ColumnName="PosY" />
+          <ScalarProperty Name="MonsterRate" ColumnName="MonsterRate" />
+          <ScalarProperty Name="MonsterGroup" ColumnName="MonsterGroup" />
+          <ScalarProperty Name="CanMoveTo" ColumnName="CanMoveTo" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Visited" ColumnName="Visited" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="IsTypeOf(ASHTENIAModel.Items)">
+        <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Player_Id" ColumnName="Player_Id" />
+          <ScalarProperty Name="ObjectType_Id" ColumnName="ObjectType_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(ASHTENIAModel.ItemTypes)">
+        <MappingFragment StoreEntitySet="ItemTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HPRestoreValue" ColumnName="HPRestoreValue" />
+          <ScalarProperty Name="DefenseBoost" ColumnName="DefenseBoost" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AttackStrenghtBonus" ColumnName="AttackStrenghtBonus" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Players">
+      <EntityTypeMapping TypeName="IsTypeOf(ASHTENIAModel.Players)">
+        <MappingFragment StoreEntitySet="Players">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Xp" ColumnName="Xp" />
+          <ScalarProperty Name="Hp" ColumnName="Hp" />
+          <ScalarProperty Name="MaxHp" ColumnName="MaxHp" />
+          <ScalarProperty Name="CurrentCellId" ColumnName="CurrentCellId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Weapons">
+      <EntityTypeMapping TypeName="IsTypeOf(ASHTENIAModel.Weapons)">
+        <MappingFragment StoreEntitySet="Weapons">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AttackRate" ColumnName="AttackRate" />
+          <ScalarProperty Name="MissRate" ColumnName="MissRate" />
+          <ScalarProperty Name="Player_Id" ColumnName="Player_Id" />
+          <ScalarProperty Name="Damage" ColumnName="Damage" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

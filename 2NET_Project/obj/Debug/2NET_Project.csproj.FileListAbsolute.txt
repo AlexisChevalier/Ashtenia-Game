@@ -1,0 +1,54 @@
+c:\users\alexis chevalier\documents\visual studio 2012\Projects\2NET_Project\2NET_Project\bin\Debug\2NET_Project.exe.config
+c:\users\alexis chevalier\documents\visual studio 2012\Projects\2NET_Project\2NET_Project\bin\Debug\2NET_Project.exe
+c:\users\alexis chevalier\documents\visual studio 2012\Projects\2NET_Project\2NET_Project\bin\Debug\2NET_Project.pdb
+c:\users\alexis chevalier\documents\visual studio 2012\Projects\2NET_Project\2NET_Project\bin\Debug\EntityFramework.dll
+c:\users\alexis chevalier\documents\visual studio 2012\Projects\2NET_Project\2NET_Project\bin\Debug\EntityFramework.xml
+c:\users\alexis chevalier\documents\visual studio 2012\Projects\2NET_Project\2NET_Project\obj\Debug\2NET_Project.csprojResolveAssemblyReference.cache
+c:\users\alexis chevalier\documents\visual studio 2012\Projects\2NET_Project\2NET_Project\obj\Debug\2NET_Project.exe
+c:\users\alexis chevalier\documents\visual studio 2012\Projects\2NET_Project\2NET_Project\obj\Debug\2NET_Project.pdb
+c:\users\alexis chevalier\documents\visual studio 2012\Projects\2NET_Project\2NET_Project\bin\Debug\2NET_Dal.dll
+c:\users\alexis chevalier\documents\visual studio 2012\Projects\2NET_Project\2NET_Project\bin\Debug\2NET_Dal.pdb
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\bin\Debug\2NET_Project.exe.config
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\obj\Debug\2NET_Project.exe
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\obj\Debug\2NET_Project.pdb
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\bin\Debug\2NET_Project.exe
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\bin\Debug\2NET_Project.pdb
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\bin\Debug\2NET_Dal.dll
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\bin\Debug\EntityFramework.dll
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\bin\Debug\2NET_Dal.pdb
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\bin\Debug\EntityFramework.xml
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\obj\Debug\2NET_Project.csprojResolveAssemblyReference.cache
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project\2NET_Project\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\bin\Debug\2NET_Project.exe.config
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\obj\Debug\2NET_Project.exe
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\obj\Debug\2NET_Project.pdb
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\bin\Debug\2NET_Project.exe
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\bin\Debug\2NET_Project.pdb
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\bin\Debug\2NET_Dal.dll
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\bin\Debug\EntityFramework.dll
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\bin\Debug\2NET_Dal.pdb
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\bin\Debug\EntityFramework.xml
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Alexis Chevalier\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\obj\Debug\2NET_Project.csprojResolveAssemblyReference.cache
+C:\Users\Chevalier Alexis\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\bin\Debug\2NET_Project.exe.config
+C:\Users\Chevalier Alexis\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\obj\Debug\2NET_Project.exe
+C:\Users\Chevalier Alexis\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\obj\Debug\2NET_Project.pdb
+C:\Users\Chevalier Alexis\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\bin\Debug\2NET_Project.exe
+C:\Users\Chevalier Alexis\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\bin\Debug\2NET_Project.pdb
+C:\Users\Chevalier Alexis\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\bin\Debug\2NET_Dal.dll
+C:\Users\Chevalier Alexis\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\bin\Debug\EntityFramework.dll
+C:\Users\Chevalier Alexis\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\bin\Debug\2NET_Dal.pdb
+C:\Users\Chevalier Alexis\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\bin\Debug\EntityFramework.xml
+C:\Users\Chevalier Alexis\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Chevalier Alexis\Dropbox\DOTNET\2NET_Project_Part2\2NET_Project\obj\Debug\2NET_Project.csprojResolveAssemblyReference.cache
+C:\Users\Alexis Chevalier\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\2NET_Project.exe.config
+C:\Users\Alexis Chevalier\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\2NET_Project.exe
+C:\Users\Alexis Chevalier\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\2NET_Project.pdb
+C:\Users\Alexis Chevalier\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\2NET_Dal.dll
+C:\Users\Alexis Chevalier\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\EntityFramework.dll
+C:\Users\Alexis Chevalier\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\2NET_Dal.pdb
+C:\Users\Alexis Chevalier\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\EntityFramework.xml
+C:\Users\Alexis Chevalier\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Alexis Chevalier\Documents\GitHub\ASHTENIA_V2\2NET_Project\obj\Debug\2NET_Project.csprojResolveAssemblyReference.cache
+C:\Users\Alexis Chevalier\Documents\GitHub\ASHTENIA_V2\2NET_Project\obj\Debug\2NET_Project.exe
+C:\Users\Alexis Chevalier\Documents\GitHub\ASHTENIA_V2\2NET_Project\obj\Debug\2NET_Project.pdb
