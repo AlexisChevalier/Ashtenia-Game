@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using _2NET_Gui.Helpers;
 
 namespace _2NET_Gui.Views
 {
@@ -23,6 +24,11 @@ namespace _2NET_Gui.Views
         public CombatPage()
         {
             InitializeComponent();
+        }
+
+        private void Label_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
+        {
+            NavigationHelper.MoveToPage(MainWindow.SelectedPlayerView);
         }
     }
 }

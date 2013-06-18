@@ -16,24 +16,40 @@
         <TabControl HorizontalAlignment="Left" Margin="0,41,0,0" Width="203">
             <TabItem Header="Armes">
                 <Grid Background="#FFE5E5E5" Margin="0,0,1,0">
-                    <ListView ItemsSource="{Binding Weapons}" SelectedItem="{Binding SelectedWeapon}" Height="253" VerticalAlignment="Top">
-                        <ListView.View >
-                            <GridView AllowsColumnReorder="False"  >
-                                <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Name}"/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                    <ListBox ItemsSource="{Binding Weapons}" SelectedItem="{Binding SelectedWeapon}" Margin="0,0,0,167">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Label Content="{Binding Name}"></Label>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Grid HorizontalAlignment="Left" Height="167" VerticalAlignment="Bottom" Width="192">
+                        <Label Content="{Binding SelectedWeaponManager.Name }" Height="47" HorizontalAlignment="Center" VerticalAlignment="Top" Width="192"/>
+                        <Label Content="{Binding SelectedWeaponManager.Level }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,47,0,0" Width="192"/>
+                        <Label Content="{Binding SelectedWeaponManager.AttackRate }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,73,0,0" Width="192"/>
+                        <Label Content="{Binding SelectedWeaponManager.MissRate }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,99,0,0" Width="192"/>
+                        <Button Content="Jeter" Command="{Binding DropWeapon}" HorizontalAlignment="Left" Margin="0,145,0,0" VerticalAlignment="Top" Width="192"/>
+                    </Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="Objets" Height="23" VerticalAlignment="Bottom">
                 <Grid Background="#FFE5E5E5">
-                    <ListView ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" Height="253" VerticalAlignment="Top">
-                        <ListView.View >
-                            <GridView AllowsColumnReorder="False">
-                                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding ObjectType}"/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                    <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" Height="354" VerticalAlignment="Top">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Label Content="{Binding ObjectType.Name}"></Label>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Grid HorizontalAlignment="Left" Height="220" Margin="0,354,0,0" VerticalAlignment="Top" Width="193">
+                        <Label Content="{Binding SelectedItemManager.Name }" Height="52" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,0,0,0" Width="192"/>
+                        <Label Content="{Binding SelectedItemManager.Level }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,52,1,0" Width="192"/>
+                        <Label Content="{Binding SelectedItemManager.HpRestoreValue }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,78,1,0" Width="192"/>
+                        <Label Content="{Binding SelectedItemManager.AttackStrenghtBonus }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,104,0,0" Width="192"/>
+                        <Label Content="{Binding SelectedItemManager.DefenseBoost }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,130,0,0" Width="192"/>
+                        <Button Content="Utiliser" Command="{Binding UseItem}" HorizontalAlignment="Left" Margin="0,176,-1,0" VerticalAlignment="Top" Width="194"/>
+                        <Button Content="Jeter" Command="{Binding DropItem}" HorizontalAlignment="Left" Margin="0,198,-1,0" VerticalAlignment="Top" Width="194"/>
+                    </Grid>
                 </Grid>
             </TabItem>
         </TabControl>
@@ -45,33 +61,49 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-            
-        <Grid Margin="203,41,0,139" Width="320" Height="320">
-            <ItemsControl x:Name="_board" ItemsSource="{Binding Grid}" HorizontalAlignment="Center" Width="320" Height="320" VerticalAlignment="Center">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <UniformGrid Columns="5" Rows="5" />
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Border BorderBrush="Black" Margin="0" BorderThickness="0">
-                            <Grid>
-                                <Grid.Background>
-                                    <ImageBrush Stretch="None" ImageSource="{Binding ImageSource}" AlignmentY="Top" AlignmentX="Center"/>
-                                </Grid.Background>
-                                <!--<TextBlock x:Name="_tb" Text="{Binding}" FontSize="40" 
-                                       VerticalAlignment="Center" HorizontalAlignment="Center" />-->
-                            </Grid>
-                        </Border>
-                        <!--<DataTemplate.Triggers>
-                            <DataTrigger Binding="{Binding}" Value="Empty">
-                                <Setter Property="Opacity" Value="0" TargetName="_tb" />
-                            </DataTrigger>
+        
+        <Label Content="Personnage :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding ActivePlayerManager.Player.Name}" HorizontalAlignment="Left" Margin="88,10,0,0" VerticalAlignment="Top"/>
+        <Grid Margin="203,41,0,139">
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="320" Height="320">
+                <ItemsControl x:Name="_board" ItemsSource="{Binding Grid}" HorizontalAlignment="Center" Width="320" Height="320" VerticalAlignment="Center">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="5" Rows="5" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <!--<DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding}" Value="Empty">
+                                <Setter Property="Opacity" Value="0" TargetName="_tb" />                            
+                        </DataTrigger>                        
                         </DataTemplate.Triggers>-->
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+                            <Border BorderBrush="Black" Margin="0" BorderThickness="0">
+                                <Grid>
+                                    <!--<TextBlock x:Name="_tb" Text="{Binding}" FontSize="40" 
+                                        VerticalAlignment="Center" HorizontalAlignment="Center" />-->
+                                    <Grid.Background>
+                                        <ImageBrush Stretch="None" ImageSource="{Binding ImageSource}" AlignmentY="Top" AlignmentX="Center"/>
+                                    </Grid.Background>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+            <Button Content="Est" x:Name="GoRightButton" Command="{Binding MoveToRight}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="76" Margin="408,224,13,224"/>
+            <Button Content="Ouest" x:Name="GoLeftButton" Command="{Binding MoveToLeft}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="76" Margin="12,224,409,224"/>
+            <Button Content="Sud" x:Name="GoBottomButton" Command="{Binding MoveToBottom}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="76" Margin="210,395,211,53"/>
+            <Button Content="Nord" x:Name="GoTopButton" Command="{Binding MoveToTop}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="76" Margin="210,53,211,395"/>
+            <Button Content="Fouiller la zone" Command="{Binding SearchInZone}" HorizontalAlignment="Left" Margin="0,438,0,0" VerticalAlignment="Top" Width="116" Height="32"/>
         </Grid>
+        <Grid Height="41" VerticalAlignment="Top" HorizontalAlignment="Right" Width="309">
+            <Label Content="Vie :" HorizontalAlignment="Left" Width="33" Margin="0,0,0,7" Height="26" VerticalAlignment="Bottom"/>
+            <Label Content="Experience :" VerticalAlignment="Center" HorizontalAlignment="Right" Width="73" Margin="0,8,100,7"/>
+            <Label Content="{Binding ActivePlayerManager.GetFormatedXp}" HorizontalAlignment="Left" Height="24" Margin="206,9,0,8" Width="93"/>
+            <Label Content="{Binding ActivePlayerManager.GetFormatedLife}" VerticalAlignment="Center" Height="24" Margin="33,9,173,8"/>
+        </Grid>
+
     </Grid>
 </Page>

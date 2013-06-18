@@ -27,6 +27,7 @@ namespace _2NET_Gui
         public static readonly Random Random = new Random();
         public static PlayerManager SelectedPlayerManager;
         public static MainGameView SelectedPlayerView;
+        public static CombatPage ActiveCombatpage;
 
 
         public MainWindow()

@@ -20,7 +20,6 @@ namespace _2NET_Gui.ViewModels
     {
         private Player _player;
         private Player _selectedPlayer;
-        private String _selectedPlayerLevel;
         private ObservableCollection<Player> _players;
         private String _newPlayerName;
         private ICommand _newPlayerCommand;
@@ -42,24 +41,7 @@ namespace _2NET_Gui.ViewModels
             set
             {
                 _selectedPlayer = value;
-                if (value == null)
-                {
-                    _selectedPlayerLevel = null;
-                }
-                else
-                {
-                    _selectedPlayerLevel = (Math.Floor((double)value.Xp / 100)).ToString();
-                }
                 NotifyPropertyChanged("SelectedPlayer");
-                NotifyPropertyChanged("SelectedPlayerLevel");
-            }
-        }
-
-        public string SelectedPlayerLevel
-        {
-            get
-            {
-                return _selectedPlayerLevel;
             }
         }
 
@@ -90,13 +72,8 @@ namespace _2NET_Gui.ViewModels
             {
                 Players = (from player in db.Players select player).ToObservableCollection();
             }
-            Players.CollectionChanged += Players_CollectionChanged;
         }
 
-        void Players_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        {
-            NotifyPropertyChanged("Students");
-        }
 
         public ICommand NewPlayerCommand
         {
@@ -118,9 +95,20 @@ namespace _2NET_Gui.ViewModels
                 if (_loadPlayerCommand == null)
                 {
                     _loadPlayerCommand = new CommandHelper(param => this.LoadPlayer(),
-                        null);
+                        CanLoadPlayer);
                 }
                 return _loadPlayerCommand;
+            }
+        }
+        public bool CanLoadPlayer(object o)
+        {
+            if (SelectedPlayer == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
 
@@ -131,9 +119,20 @@ namespace _2NET_Gui.ViewModels
                 if (_deletePlayerCommand == null)
                 {
                     _deletePlayerCommand = new CommandHelper(param => this.DeletePlayer(),
-                        null);
+                        CanDeletePlayer);
                 }
                 return _deletePlayerCommand;
+            }
+        }
+        public bool CanDeletePlayer(object o)
+        {
+            if (SelectedPlayer == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
 

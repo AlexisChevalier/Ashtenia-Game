@@ -7,9 +7,29 @@ using _2NET_Dal.Model;
 
 namespace _2NET_Gui.Managers
 {
-    class WeaponManager
+    public class WeaponManager
     {
         public Weapon Weapon;
+
+        public String Name
+        {
+            get { return Weapon.Name;  }
+        }
+
+        public String Level
+        {
+            get { return "Niveau : " + Weapon.Level; }
+        }
+
+        public String MissRate
+        {
+            get { return "Chance rater : " + Weapon.MissRate; }
+        }
+
+        public String AttackRate
+        {
+            get { return "Vitesse attaque : " + Weapon.AttackRate; }
+        }
 
         //Give a weapon with an existing weapon
         public WeaponManager(Weapon weapon)
