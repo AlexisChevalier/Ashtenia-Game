@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using _2NET_Gui.Helpers;
 using _2NET_Gui.Managers;
+using _2NET_Gui.ViewModels;
 using _2NET_Gui.Views;
 
 namespace _2NET_Gui
@@ -27,6 +28,7 @@ namespace _2NET_Gui
         public static readonly Random Random = new Random();
         public static PlayerManager SelectedPlayerManager;
         public static MainGameView SelectedPlayerView;
+        public static MainGameViewModel SelectedPlayerViewModel;
         public static CombatPage ActiveCombatpage;
 
 

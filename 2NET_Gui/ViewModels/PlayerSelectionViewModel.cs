@@ -20,6 +20,7 @@ namespace _2NET_Gui.ViewModels
     {
         private Player _player;
         private Player _selectedPlayer;
+        private String _selectedPlayerLevel;
         private ObservableCollection<Player> _players;
         private String _newPlayerName;
         private ICommand _newPlayerCommand;
@@ -40,9 +41,23 @@ namespace _2NET_Gui.ViewModels
             get { return _selectedPlayer; }
             set
             {
+                if (value == null)
+                {
+                    _selectedPlayerLevel = null;
+                }
+                else
+                {
+                    _selectedPlayerLevel = (Math.Floor((double)value.Xp / 100)).ToString();
+                }
                 _selectedPlayer = value;
                 NotifyPropertyChanged("SelectedPlayer");
+                NotifyPropertyChanged("SelectedPlayerLevel");
             }
+        }
+
+        public string SelectedPlayerLevel
+        {
+            get { return _selectedPlayerLevel; }
         }
 
         public ObservableCollection<Player> Players

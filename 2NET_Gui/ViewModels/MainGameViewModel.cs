@@ -38,6 +38,7 @@ namespace _2NET_Gui.ViewModels
         /* CONSTRUCTOR */
         public MainGameViewModel()
         {
+            MainWindow.SelectedPlayerViewModel = this;
             _playerM = MainWindow.SelectedPlayerManager;
             _items = _playerM.GetItems();
             _weapons = _playerM.GetWeapons();

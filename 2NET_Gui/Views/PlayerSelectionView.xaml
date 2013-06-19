@@ -41,7 +41,7 @@
         <Label Content="Niveau :" HorizontalAlignment="Left" Margin="10,289,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Content="Points de vie :" HorizontalAlignment="Left" Margin="10,320,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Content="{Binding SelectedPlayer.Name}" HorizontalAlignment="Left" Margin="57,258,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Label Content="{Binding SelectedPlayerLevel}" HorizontalAlignment="Left" Margin="98,289,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.6,0.5"/>
+        <Label Content="{Binding SelectedPlayerLevel}" HorizontalAlignment="Left" Margin="68,289,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Content="{Binding SelectedPlayer.Hp}" HorizontalAlignment="Left" Margin="98,320,0,0" Grid.Row="1" VerticalAlignment="Top"/>
     </Grid>
 </Page>

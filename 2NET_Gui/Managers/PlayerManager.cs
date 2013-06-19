@@ -259,5 +259,10 @@ namespace _2NET_Gui.Managers
         {
             get { return (Math.Floor((double) Player.Xp/100)) + " (" + Player.MaxHp + ")"; }
         }
+
+        public object GetLevel
+        {
+            get { return "Lvl " + (Math.Floor((double) Player.Xp/100)); }
+        }
     }
 }

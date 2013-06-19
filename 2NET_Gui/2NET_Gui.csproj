@@ -67,8 +67,10 @@
     <Compile Include="Helpers\SoundHelper.cs" />
     <Compile Include="Managers\CellManager.cs" />
     <Compile Include="Managers\ItemManager.cs" />
+    <Compile Include="Managers\MonsterManager.cs" />
     <Compile Include="Managers\PlayerManager.cs" />
     <Compile Include="Managers\WeaponManager.cs" />
+    <Compile Include="ViewModels\CombatViewModel.cs" />
     <Compile Include="ViewModels\MainGameViewModel.cs" />
     <Compile Include="ViewModels\PlayerSelectionViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
@@ -187,6 +189,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Ressources\Images\ground_empty_cell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Images\fight_plain.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

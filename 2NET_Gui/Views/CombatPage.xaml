@@ -3,12 +3,79 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:viewModels="clr-namespace:_2NET_Gui.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="700"
 	Title="CombatPage">
 
-    <Grid>
-        <Label Content="COMBAT" HorizontalAlignment="Left" Margin="344,315,0,0" VerticalAlignment="Top" MouseLeftButtonUp="Label_MouseLeftButtonUp_1"/>
+    <Page.Resources>
+        <viewModels:CombatViewModel x:Key="CombatViewModel"/>
+    </Page.Resources>
 
+    <Grid DataContext="{Binding Source={StaticResource CombatViewModel}}">
+        <TabControl HorizontalAlignment="Left" Width="203">
+            <TabItem Header="Armes">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+                    <ListBox ItemsSource="{Binding MainGameViewModel.Weapons}" SelectedItem="{Binding MainGameViewModel.SelectedWeapon}" Margin="0,0,0,167">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Label Content="{Binding Name}"></Label>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Grid HorizontalAlignment="Left" Height="167" VerticalAlignment="Bottom" Width="192">
+                        <Label Content="{Binding MainGameViewModel.SelectedWeaponManager.Name }" Height="47" HorizontalAlignment="Center" VerticalAlignment="Top" Width="192"/>
+                        <Label Content="{Binding MainGameViewModel.SelectedWeaponManager.Level }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,47,0,0" Width="192"/>
+                        <Label Content="{Binding MainGameViewModel.SelectedWeaponManager.AttackRate }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,73,0,0" Width="192"/>
+                        <Label Content="{Binding MainGameViewModel.SelectedWeaponManager.MissRate }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,99,0,0" Width="192"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Objets" Height="23" VerticalAlignment="Bottom">
+                <Grid Background="#FFE5E5E5">
+                    <ListBox ItemsSource="{Binding MainGameViewModel.Items}" SelectedItem="{Binding MainGameViewModel.SelectedItem}" Height="354" VerticalAlignment="Top">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Label Content="{Binding ObjectType.Name}"></Label>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Grid HorizontalAlignment="Left" Height="220" Margin="0,354,0,0" VerticalAlignment="Top" Width="193">
+                        <Label Content="{Binding MainGameViewModel.SelectedItemManager.Name }" Height="52" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,0,0,0" Width="192"/>
+                        <Label Content="{Binding MainGameViewModel.SelectedItemManager.Level }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,52,1,0" Width="192"/>
+                        <Label Content="{Binding MainGameViewModel.SelectedItemManager.HpRestoreValue }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,78,1,0" Width="192"/>
+                        <Label Content="{Binding MainGameViewModel.SelectedItemManager.AttackStrenghtBonus }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,104,0,0" Width="192"/>
+                        <Label Content="{Binding MainGameViewModel.SelectedItemManager.DefenseBoost }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,130,0,0" Width="192"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <ListBox Margin="203,0,0,0" Height="139" VerticalAlignment="Bottom" ItemsSource="{Binding MessageList}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding}"></Label>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid HorizontalAlignment="Left" Height="511" Margin="203,0,0,0" VerticalAlignment="Top" Width="497">
+            <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="450">
+                <Grid Margin="0,0,225,0">
+                    <Label FontSize="20" Content="{Binding MainGameViewModel.ActivePlayerManager.Player.Name}" HorizontalAlignment="Left" Margin="10,303,0,0" VerticalAlignment="Top" Height="50" Width="205"/>
+                    <ProgressBar Maximum="{Binding MainGameViewModel.ActivePlayerManager.Player.MaxHp}" Value="{Binding MainGameViewModel.ActivePlayerManager.Player.Hp}" Height="23" Margin="10,353,10,0" VerticalAlignment="Top"/>
+                    <Label Content="{Binding MainGameViewModel.ActivePlayerManager.GetFormatedLife}" HorizontalAlignment="Left" Margin="10,381,0,0" VerticalAlignment="Top"/>
+                    <Label Content="{Binding MainGameViewModel.ActivePlayerManager.GetLevel}" HorizontalAlignment="Right" Margin="0,381,10,0" VerticalAlignment="Top"/>
+                    <Button Content="Attaquer avec l'arme sélectionnée" Command="{Binding AttackMonster}" Margin="10,84,10,0" VerticalAlignment="Top" Height="46"/>
+                    <Button Content="Utiliser l'objet sélectionné" Command="{Binding UseItem}" HorizontalAlignment="Left" Margin="10,204,0,0" VerticalAlignment="Top" Width="205" Height="43"/>
+                </Grid>
+                <Grid Margin="225,0,0,0">
+                    <Label FontSize="20" Content="{Binding ActiveMonster.Monster.Name}" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top" Height="50" Width="205"/>
+                    <ProgressBar Maximum="{Binding ActiveMonster.MonsterMaxHp}" Value="{Binding ActiveMonster.Monster.Hp}" Height="23" Margin="10,353,10,0" VerticalAlignment="Top"/>
+                    <Label Content="{Binding ActiveMonster.GetFormatedLife}" HorizontalAlignment="Left" Margin="10,381,0,0" VerticalAlignment="Top"/>
+                    <Label Content="{Binding ActiveMonster.GetLevel}" HorizontalAlignment="Right" Margin="0,381,10,0" VerticalAlignment="Top"/>
+                </Grid>
+
+                <Label Content="VS" FontSize="30" HorizontalAlignment="Center" Margin="202,0" VerticalAlignment="Bottom" Height="41"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

@@ -25,10 +25,5 @@ namespace _2NET_Gui.Views
         {
             InitializeComponent();
         }
-
-        private void Label_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
-        {
-            NavigationHelper.MoveToPage(MainWindow.SelectedPlayerView);
-        }
     }
 }
