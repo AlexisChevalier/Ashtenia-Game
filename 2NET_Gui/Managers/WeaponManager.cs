@@ -13,22 +13,38 @@ namespace _2NET_Gui.Managers
 
         public String Name
         {
-            get { return Weapon.Name;  }
+            get
+            {
+                if (Weapon != null) return Weapon.Name;
+                return null;
+            }
         }
 
         public String Level
         {
-            get { return "Niveau : " + Weapon.Level; }
+            get 
+            { 
+                if (Weapon != null) return "Niveau : " + Weapon.Level;
+                return null;
+            }
         }
 
         public String MissRate
         {
-            get { return "Chance rater : " + Weapon.MissRate; }
+            get
+            {
+                if (Weapon != null) return "Chance rater : " + Weapon.MissRate;
+                return null;
+            }
         }
 
         public String AttackRate
         {
-            get { return "Vitesse attaque : " + Weapon.AttackRate; }
+            get
+            {
+                if (Weapon != null) return "Vitesse attaque : " + Weapon.AttackRate;
+                return null;
+            }
         }
 
         //Give a weapon with an existing weapon

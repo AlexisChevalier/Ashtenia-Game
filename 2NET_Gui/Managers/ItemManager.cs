@@ -19,35 +19,55 @@ namespace _2NET_Gui.Managers
 
         public String Name
         {
-            get { return Item.ObjectType.Name; }
+            get
+            {
+                if (Item != null) return Item.ObjectType.Name;
+                return null; 
+            }
         }
 
         public String Level
         {
-            get { return "Niveau : " + Item.ObjectType.Level; }
+            get
+            {
+                if (Item != null) return "Niveau : " + Item.ObjectType.Level;
+                return null;
+            }
         }
 
         public String AttackStrenghtBonus
         {
-            get { return "Bonus Attaque : " + Item.ObjectType.AttackStrenghtBonus; }
+            get
+            {
+                if (Item != null) return "Bonus Attaque : " + Item.ObjectType.AttackStrenghtBonus;
+                return null;
+            }
         }
 
         public String DefenseBoost
         {
-            get { return "Bonus Défense : " + Item.ObjectType.DefenseBoost; }
+            get
+            {
+                if (Item != null) return "Bonus Défense : " + Item.ObjectType.DefenseBoost;
+                return null;
+            }
         }
 
         public String HpRestoreValue
         {
-            get { return "Bonus Points de vie : " + Item.ObjectType.HpRestoreValue; }
+            get
+            {
+                if (Item != null) return "Bonus Points de vie : " + Item.ObjectType.HpRestoreValue;
+                return null;
+            }
         }
-
+         
         //Générateur d'item, crée l'itemType si besoin, sinon il le charge, puis redirige vers les autres méthodes
         /* Types d'items :
          *  0 - Health Potion
          *  1 - Attack Potion
          *  2 - Defense Potion
-         */
+         */   
         public ItemManager(int level, int type = -1)
         {
             Item = new Item();
@@ -66,7 +86,7 @@ namespace _2NET_Gui.Managers
                 case 1:
                     GenerateAttackPotion(level);
                     break;
-                case 2:
+                case 2: 
                     GenerateDefensePotion(level);
                     break;
             }

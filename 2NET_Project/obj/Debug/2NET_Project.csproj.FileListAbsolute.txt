@@ -52,3 +52,14 @@ C:\Users\Alexis Chevalier\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\fr
 C:\Users\Alexis Chevalier\Documents\GitHub\ASHTENIA_V2\2NET_Project\obj\Debug\2NET_Project.csprojResolveAssemblyReference.cache
 C:\Users\Alexis Chevalier\Documents\GitHub\ASHTENIA_V2\2NET_Project\obj\Debug\2NET_Project.exe
 C:\Users\Alexis Chevalier\Documents\GitHub\ASHTENIA_V2\2NET_Project\obj\Debug\2NET_Project.pdb
+C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\2NET_Project.exe.config
+C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\2NET_Project.exe
+C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\2NET_Project.pdb
+C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\2NET_Dal.dll
+C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\EntityFramework.dll
+C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\2NET_Dal.pdb
+C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\EntityFramework.xml
+C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Project\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Project\obj\Debug\2NET_Project.csprojResolveAssemblyReference.cache
+C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Project\obj\Debug\2NET_Project.exe
+C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Project\obj\Debug\2NET_Project.pdb
