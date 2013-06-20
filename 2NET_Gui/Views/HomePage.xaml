@@ -6,9 +6,13 @@
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="700"
       MinHeight="500" MinWidth="700"
-	Title="HomePage">
+	Title="HomePage" FontFamily="Lucida Blackletter" FontSize="15">
+    <Page.Background>
+        <ImageBrush ImageSource="/2NET_Gui;component/Ressources/UI/paper background.png"/>
+    </Page.Background>
 
-    <Grid x:Name="HomeGrid">
-        <Label Content="ASHTENIA" VerticalAlignment="Center" Height="60" HorizontalAlignment="Center" Width="174" FontSize="36" MouseLeftButtonUp="Label_MouseLeftButtonUp_1"/>
+    <Grid x:Name="HomeGrid" MouseLeftButtonUp="Label_MouseLeftButtonUp_1">
+        <Label Content="ASHTENIA" VerticalAlignment="Center" Height="60" HorizontalAlignment="Center" Width="243" FontSize="36" MouseLeftButtonUp="Label_MouseLeftButtonUp_1" Margin="244,290,213,300"/>
+        <Label Content="Cliquez pour commencer" HorizontalAlignment="Left" Margin="244,378,0,0" VerticalAlignment="Top" FontSize="20" MouseLeftButtonUp="Label_MouseLeftButtonUp_1"/>
     </Grid>
 </Page>

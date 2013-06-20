@@ -112,7 +112,17 @@ namespace _2NET_Gui.Managers
 
         public String GetFormatedLife
         {
-            get { return Monster.Hp + " / " + MonsterMaxHp; }
+            get
+            {
+                if (Monster.Hp <= 0)
+                {
+                    return "0 / " + MonsterMaxHp;
+                }
+                else
+                {
+                    return Monster.Hp + " / " + MonsterMaxHp;
+                }
+            }
         }
 
         public object GetLevel

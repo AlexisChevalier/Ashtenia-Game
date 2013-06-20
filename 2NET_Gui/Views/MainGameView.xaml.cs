@@ -25,6 +25,7 @@ namespace _2NET_Gui.Views
         {
             DataContext = new MainGameViewModel();
             InitializeComponent();
+            MyGrid.Focus();
         }
     }
 }

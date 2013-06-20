@@ -334,12 +334,10 @@ namespace _2NET_Gui.ViewModels
                     MessageList.Insert(0, cellM.Cell.Description);
                     _playerM.Save();
                     ExecRefreshGrid();
-
-                    MainWindow.ActiveCombatpage = new CombatPage();
-
+                    SoundHelper.PlayFromCategory(SoundHelper.Categories.Fight);
                     MessageBox.Show("Vous avez rencontré un monstre, le combat va commencer !");
 
-                    NavigationHelper.MoveToPage(MainWindow.ActiveCombatpage);
+                    NavigationHelper.MoveToPage(new CombatPage());
                 }
                 else
                 {
@@ -392,6 +390,15 @@ namespace _2NET_Gui.ViewModels
                     _grid.Add(temp);
                 }
             }
+            NotifyPropertyChanged("Grid");
+        }
+
+        public void RefreshMainUi()
+        {
+            NotifyPropertyChanged("MessageList");
+            NotifyPropertyChanged("Items");
+            NotifyPropertyChanged("Weapons");
+            NotifyPropertyChanged("ActivePlayerManager");
             NotifyPropertyChanged("Grid");
         }
     }

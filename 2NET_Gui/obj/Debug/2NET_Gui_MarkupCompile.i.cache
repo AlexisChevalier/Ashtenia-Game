@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Gui\obj\Debug\
+C:\Users\Alexis Chevalier\Documents\github\ashtenia_v2\2NET_Gui\obj\Debug\
 _2NET_Gui
 none
 false
 DEBUG;TRACE
-C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Gui\App.xaml
-6366745536
+C:\Users\Alexis Chevalier\Documents\github\ashtenia_v2\2NET_Gui\App.xaml
+7573932170
 
-291972603695
-14-2109919946
-MainWindow.xaml;Views\CombatPage.xaml;Views\HomePage.xaml;Views\LoadingPage.xaml;Views\PlayerSelectionView.xaml;Views\MainGameView.xaml;
+30-1610286477
+1472380199
+MainWindow.xaml;Views\CombatPage.xaml;Views\HomePage.xaml;Views\LoadingPage.xaml;Views\LoosePage.xaml;Views\PlayerSelectionView.xaml;Views\MainGameView.xaml;
 
 True
 

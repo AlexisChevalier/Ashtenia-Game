@@ -6,37 +6,53 @@
       xmlns:viewModels="clr-namespace:_2NET_Gui.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="700"
-	Title="CombatPage">
+	Title="CombatPage" FontFamily="Lucida Blackletter" FontSize="15">
 
     <Page.Resources>
         <viewModels:CombatViewModel x:Key="CombatViewModel"/>
     </Page.Resources>
 
+    <Page.Background>
+        <ImageBrush ImageSource="/2NET_Gui;component/Ressources/UI/paper background.png"/>
+    </Page.Background>
+
     <Grid DataContext="{Binding Source={StaticResource CombatViewModel}}">
         <TabControl HorizontalAlignment="Left" Width="203">
             <TabItem Header="Armes">
-                <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+                <Grid Margin="0,0,0,0">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/2NET_Gui;component/Ressources/UI/wood background.png"/>
+                    </Grid.Background>
                     <ListBox ItemsSource="{Binding MainGameViewModel.Weapons}" SelectedItem="{Binding MainGameViewModel.SelectedWeapon}" Margin="0,0,0,167">
+                        <ListBox.Background>
+                            <ImageBrush ImageSource="/2NET_Gui;component/Ressources/UI/wood background.png"/>
+                        </ListBox.Background>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Label Content="{Binding Name}"></Label>
+                                <Label Content="{Binding Name}" Foreground="White" FontSize="13"></Label>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <Grid HorizontalAlignment="Left" Height="167" VerticalAlignment="Bottom" Width="192">
-                        <Label Content="{Binding MainGameViewModel.SelectedWeaponManager.Name }" Height="47" HorizontalAlignment="Center" VerticalAlignment="Top" Width="192"/>
-                        <Label Content="{Binding MainGameViewModel.SelectedWeaponManager.Level }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,47,0,0" Width="192"/>
-                        <Label Content="{Binding MainGameViewModel.SelectedWeaponManager.AttackRate }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,73,0,0" Width="192"/>
-                        <Label Content="{Binding MainGameViewModel.SelectedWeaponManager.MissRate }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,99,0,0" Width="192"/>
+                        <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="{Binding MainGameViewModel.SelectedWeaponManager.Name }" Height="47" HorizontalAlignment="Center" VerticalAlignment="Top" Width="192" Foreground="White"/>
+                        <Label Content="{Binding MainGameViewModel.SelectedWeaponManager.Level }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,47,0,0" Width="192" Foreground="White"/>
+                        <Label Content="{Binding MainGameViewModel.SelectedWeaponManager.AttackRate }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,73,0,0" Width="192" Foreground="White"/>
+                        <Label Content="{Binding MainGameViewModel.SelectedWeaponManager.MissRate }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,99,0,0" Width="192" Foreground="White"/>
                     </Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="Objets" Height="23" VerticalAlignment="Bottom">
-                <Grid Background="#FFE5E5E5">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/2NET_Gui;component/Ressources/UI/wood background.png"/>
+                    </Grid.Background>
                     <ListBox ItemsSource="{Binding MainGameViewModel.Items}" SelectedItem="{Binding MainGameViewModel.SelectedItem}" Height="354" VerticalAlignment="Top">
+                        <ListBox.Background>
+                            <ImageBrush ImageSource="/2NET_Gui;component/Ressources/UI/wood background.png"/>
+                        </ListBox.Background>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Label Content="{Binding ObjectType.Name}"></Label>
+                                <Label Content="{Binding ObjectType.Name}" Foreground="White" FontSize="13"></Label>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
@@ -50,7 +66,10 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <ListBox Margin="203,0,0,0" Height="139" VerticalAlignment="Bottom" ItemsSource="{Binding MessageList}">
+        <ListBox Margin="203,0,0,0" Height="139" VerticalAlignment="Bottom" ItemsSource="{Binding MessageList}"  BorderBrush="Sienna" BorderThickness="3">
+            <ListBox.Background>
+                <ImageBrush ImageSource="/2NET_Gui;component/Ressources/UI/paper2 background.jpg"/>
+            </ListBox.Background>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Label Content="{Binding}"></Label>
@@ -58,23 +77,24 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <Grid HorizontalAlignment="Left" Height="511" Margin="203,0,0,0" VerticalAlignment="Top" Width="497">
-            <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="450">
+            <Grid Height="450" VerticalAlignment="Center" HorizontalAlignment="Center" Width="450">
                 <Grid Margin="0,0,225,0">
                     <Label FontSize="20" Content="{Binding MainGameViewModel.ActivePlayerManager.Player.Name}" HorizontalAlignment="Left" Margin="10,303,0,0" VerticalAlignment="Top" Height="50" Width="205"/>
                     <ProgressBar Maximum="{Binding MainGameViewModel.ActivePlayerManager.Player.MaxHp}" Value="{Binding MainGameViewModel.ActivePlayerManager.Player.Hp}" Height="23" Margin="10,353,10,0" VerticalAlignment="Top"/>
                     <Label Content="{Binding MainGameViewModel.ActivePlayerManager.GetFormatedLife}" HorizontalAlignment="Left" Margin="10,381,0,0" VerticalAlignment="Top"/>
                     <Label Content="{Binding MainGameViewModel.ActivePlayerManager.GetLevel}" HorizontalAlignment="Right" Margin="0,381,10,0" VerticalAlignment="Top"/>
-                    <Button Content="Attaquer avec l'arme sélectionnée" Command="{Binding AttackMonster}" Margin="10,84,10,0" VerticalAlignment="Top" Height="46"/>
-                    <Button Content="Utiliser l'objet sélectionné" Command="{Binding UseItem}" HorizontalAlignment="Left" Margin="10,204,0,0" VerticalAlignment="Top" Width="205" Height="43"/>
+                    <Button Content="Attaquer avec l'arme sélectionnée" Command="{Binding AttackMonster}" Margin="0,84,0,0" VerticalAlignment="Top" Height="46"/>
+                    <Button Content="Utiliser l'objet sélectionné" Command="{Binding UseItem}" HorizontalAlignment="Left" Margin="0,204,0,0" VerticalAlignment="Top" Width="225" Height="43"/>
                 </Grid>
                 <Grid Margin="225,0,0,0">
                     <Label FontSize="20" Content="{Binding ActiveMonster.Monster.Name}" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top" Height="50" Width="205"/>
                     <ProgressBar Maximum="{Binding ActiveMonster.MonsterMaxHp}" Value="{Binding ActiveMonster.Monster.Hp}" Height="23" Margin="10,353,10,0" VerticalAlignment="Top"/>
                     <Label Content="{Binding ActiveMonster.GetFormatedLife}" HorizontalAlignment="Left" Margin="10,381,0,0" VerticalAlignment="Top"/>
                     <Label Content="{Binding ActiveMonster.GetLevel}" HorizontalAlignment="Right" Margin="0,381,10,0" VerticalAlignment="Top"/>
+                    <Image Height="178" VerticalAlignment="Top" Margin="23,77,24,0" Source="/2NET_Gui;component/Ressources\UI\swords.png"/>
                 </Grid>
 
-                <Label Content="VS" FontSize="30" HorizontalAlignment="Center" Margin="202,0" VerticalAlignment="Bottom" Height="41"/>
+                <Label Content="VS" FontSize="30" HorizontalAlignment="Center" Margin="206,0,198,0" VerticalAlignment="Bottom" Height="51"/>
             </Grid>
         </Grid>
     </Grid>

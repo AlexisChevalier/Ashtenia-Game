@@ -5,7 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="700"
-	Title="LoadingPage">
+	Title="LoadingPage" FontFamily="Lucida Blackletter">
+
+    <Page.Background>
+        <ImageBrush ImageSource="/2NET_Gui;component/Ressources/UI/paper background.png"/>
+    </Page.Background>
 
     <Grid>
         <ProgressBar HorizontalAlignment="Center" Height="21" VerticalAlignment="Center" Width="252" IsIndeterminate="True"/>

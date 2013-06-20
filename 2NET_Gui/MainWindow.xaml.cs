@@ -29,8 +29,6 @@ namespace _2NET_Gui
         public static PlayerManager SelectedPlayerManager;
         public static MainGameView SelectedPlayerView;
         public static MainGameViewModel SelectedPlayerViewModel;
-        public static CombatPage ActiveCombatpage;
-
 
         public MainWindow()
         {

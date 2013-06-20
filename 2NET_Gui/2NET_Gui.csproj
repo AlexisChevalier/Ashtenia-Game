@@ -83,6 +83,9 @@
     <Compile Include="Views\LoadingPage.xaml.cs">
       <DependentUpon>LoadingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\LoosePage.xaml.cs">
+      <DependentUpon>LoosePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PlayerSelectionView.xaml.cs">
       <DependentUpon>PlayerSelectionView.xaml</DependentUpon>
     </Compile>
@@ -110,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LoadingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoosePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -191,7 +198,25 @@
     <Resource Include="Ressources\Images\ground_empty_cell.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ressources\Images\fight_plain.png" />
+    <Resource Include="Ressources\UI\paper background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\UI\wood background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\UI\paper2 background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\UI\rock background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\UI\bottom_button.png" />
+    <Resource Include="Ressources\UI\left_button.png" />
+    <Resource Include="Ressources\UI\right_button.png" />
+    <Resource Include="Ressources\UI\top_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\UI\swords.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

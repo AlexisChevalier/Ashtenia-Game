@@ -17,33 +17,49 @@ namespace _2NET_Gui.Helpers
             Intro,
             Normal,
             Fight,
-            Defeat,
-            Victory
+            Defeat
         }
         private static readonly SoundPlayer Player = new SoundPlayer();
         private static Thread _soundThread;
+        private static int _lastNormalPlayed = 1;
+        private static int _lastFightPlayed = 1;
 
         public static void PlayFromCategory(Categories categorie)
         {
             Stop();
             var soundLocation = "";
-            var random = MainWindow.Random.Next(0, 2);
+            var random = MainWindow.Random.Next(0, 100);
             switch (categorie)
             {
                 case Categories.Intro:
                     soundLocation = @"medias\sound\INTRO1.wav";
                     break;
                 case Categories.Normal:
-                    soundLocation = @"medias\sound\NORMAL1.wav";
+                    if (_lastNormalPlayed == 1)
+                    {
+                        _lastNormalPlayed = 2;
+                        soundLocation = @"medias\sound\NORMAL2.wav";
+                    }
+                    else
+                    {
+                        _lastNormalPlayed = 1;
+                        soundLocation = @"medias\sound\NORMAL1.wav";
+                    }
                     break;
                 case Categories.Fight:
-                    soundLocation = @"medias\sound\FIGHT1.wav";
+                    if (_lastFightPlayed == 1)
+                    {
+                        _lastFightPlayed = 2;
+                        soundLocation = @"medias\sound\FIGHT2.wav";
+                    }
+                    else
+                    {
+                        _lastFightPlayed = 1;
+                        soundLocation = @"medias\sound\FIGHT1.wav";
+                    }
                     break;
                 case Categories.Defeat:
                     soundLocation = @"medias\sound\DEFEAT.wav";
-                    break;
-                case Categories.Victory:
-                    soundLocation = @"medias\sound\VICTORY.wav";
                     break;
             }
             Player.SoundLocation = soundLocation;

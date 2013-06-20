@@ -6,55 +6,91 @@
       xmlns:viewModels="clr-namespace:_2NET_Gui.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="700"
-	Title="MainGameView">
+      Title="MainGameView" FontFamily="Lucida Blackletter" FontSize="15">
 
+
+    <Page.Background>
+        <ImageBrush ImageSource="/2NET_Gui;component/Ressources/UI/paper background.png"/>
+    </Page.Background>
     <Page.Resources>
         <viewModels:MainGameViewModel x:Key="MainGameViewModel"/>
     </Page.Resources>
+    <Page.DataContext>
+        <viewModels:MainGameViewModel></viewModels:MainGameViewModel>
+    </Page.DataContext>
 
-    <Grid DataContext="{Binding Source={StaticResource MainGameViewModel}}">
+
+
+    <Grid x:Name="MyGrid" DataContext="{Binding Source={StaticResource MainGameViewModel}}">
+        <Grid.InputBindings>
+            <KeyBinding Key="Z" Command="{Binding MoveToTop }"/>
+            <KeyBinding Key="S" Command="{Binding MoveToBottom }"/>
+            <KeyBinding Key="Q" Command="{Binding MoveToLeft }"/>
+            <KeyBinding Key="D" Command="{Binding MoveToRight }"/>
+            <KeyBinding Key="F" Command="{Binding SearchInZone }"/>
+        </Grid.InputBindings>
         <TabControl HorizontalAlignment="Left" Margin="0,41,0,0" Width="203">
             <TabItem Header="Armes">
-                <Grid Background="#FFE5E5E5" Margin="0,0,1,0">
+                <Grid Margin="0,0,1,0">
+
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/2NET_Gui;component/Ressources/UI/wood background.png"/>
+                    </Grid.Background>
                     <ListBox ItemsSource="{Binding Weapons}" SelectedItem="{Binding SelectedWeapon}" Margin="0,0,0,167">
+                        <ListBox.Background>
+                            <ImageBrush ImageSource="/2NET_Gui;component/Ressources/UI/wood background.png"/>
+                        </ListBox.Background>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Label Content="{Binding Name}"></Label>
+                                <Label Content="{Binding Name}" Foreground="White" FontSize="13"></Label>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <Grid HorizontalAlignment="Left" Height="167" VerticalAlignment="Bottom" Width="192">
-                        <Label Content="{Binding SelectedWeaponManager.Name }" Height="47" HorizontalAlignment="Center" VerticalAlignment="Top" Width="192"/>
-                        <Label Content="{Binding SelectedWeaponManager.Level }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,47,0,0" Width="192"/>
-                        <Label Content="{Binding SelectedWeaponManager.AttackRate }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,73,0,0" Width="192"/>
-                        <Label Content="{Binding SelectedWeaponManager.MissRate }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,99,0,0" Width="192"/>
+                        <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="{Binding SelectedWeaponManager.Name }" Height="47" HorizontalAlignment="Center" VerticalAlignment="Top" Width="192" Foreground="White"/>
+                        <Label Content="{Binding SelectedWeaponManager.Level }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,47,0,0" Width="192" Foreground="White"/>
+                        <Label Content="{Binding SelectedWeaponManager.AttackRate }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,73,0,0" Width="192" Foreground="White"/>
+                        <Label Content="{Binding SelectedWeaponManager.MissRate }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,99,0,0" Width="192" Foreground="White"/>
                         <Button Content="Jeter" Command="{Binding DropWeapon}" HorizontalAlignment="Left" Margin="0,145,0,0" VerticalAlignment="Top" Width="192"/>
                     </Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="Objets" Height="23" VerticalAlignment="Bottom">
-                <Grid Background="#FFE5E5E5">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/2NET_Gui;component/Ressources/UI/wood background.png"/>
+                    </Grid.Background>
                     <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" Height="354" VerticalAlignment="Top">
+                        <ListBox.Background>
+                            <ImageBrush ImageSource="/2NET_Gui;component/Ressources/UI/wood background.png"/>
+                        </ListBox.Background>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Label Content="{Binding ObjectType.Name}"></Label>
+                                <Label Content="{Binding ObjectType.Name}" Foreground="White" FontSize="13"></Label>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <Grid HorizontalAlignment="Left" Height="220" Margin="0,354,0,0" VerticalAlignment="Top" Width="193">
-                        <Label Content="{Binding SelectedItemManager.Name }" Height="52" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,0,0,0" Width="192"/>
-                        <Label Content="{Binding SelectedItemManager.Level }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,52,1,0" Width="192"/>
-                        <Label Content="{Binding SelectedItemManager.HpRestoreValue }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,78,1,0" Width="192"/>
-                        <Label Content="{Binding SelectedItemManager.AttackStrenghtBonus }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,104,0,0" Width="192"/>
-                        <Label Content="{Binding SelectedItemManager.DefenseBoost }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,130,0,0" Width="192"/>
+                        <Label Content="{Binding SelectedItemManager.Name }" Height="52" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,0,0,0" Width="192" Foreground="White"/>
+                        <Label Content="{Binding SelectedItemManager.Level }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,52,1,0" Width="192" Foreground="White"/>
+                        <Label Content="{Binding SelectedItemManager.HpRestoreValue }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,78,1,0" Width="192" Foreground="White"/>
+                        <Label Content="{Binding SelectedItemManager.AttackStrenghtBonus }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,104,0,0" Width="192" Foreground="White"/>
+                        <Label Content="{Binding SelectedItemManager.DefenseBoost }" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,130,0,0" Width="192" Foreground="White"/>
                         <Button Content="Utiliser" Command="{Binding UseItem}" HorizontalAlignment="Left" Margin="0,176,-1,0" VerticalAlignment="Top" Width="194"/>
                         <Button Content="Jeter" Command="{Binding DropItem}" HorizontalAlignment="Left" Margin="0,198,-1,0" VerticalAlignment="Top" Width="194"/>
                     </Grid>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Rectangle Fill="#FFF4F4F5" Height="41" Stroke="Black" VerticalAlignment="Top"/>
-        <ListBox Margin="203,0,0,0" Height="139" VerticalAlignment="Bottom" ItemsSource="{Binding MessageList}">
+        <Rectangle Height="41" Stroke="Black" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/2NET_Gui;component/Ressources/UI/wood background.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <ListBox Margin="203,0,0,0" Height="139" VerticalAlignment="Bottom" ItemsSource="{Binding MessageList}" BorderBrush="Sienna" BorderThickness="3">
+            <ListBox.Background>
+                <ImageBrush ImageSource="/2NET_Gui;component/Ressources/UI/paper2 background.jpg"/>
+            </ListBox.Background>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Label Content="{Binding}"></Label>
@@ -62,11 +98,11 @@
             </ListBox.ItemTemplate>
         </ListBox>
         
-        <Label Content="Personnage :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="{Binding ActivePlayerManager.Player.Name}" HorizontalAlignment="Left" Margin="88,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Personnage :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="{Binding ActivePlayerManager.Player.Name}" HorizontalAlignment="Left" Margin="105,10,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Grid Margin="203,41,0,139">
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="320" Height="320">
-                <ItemsControl x:Name="_board" ItemsSource="{Binding Grid}" HorizontalAlignment="Center" Width="320" Height="320" VerticalAlignment="Center">
+                <ItemsControl x:Name="_board" ItemsSource="{Binding Grid}" HorizontalAlignment="Center" Width="320" Height="320" VerticalAlignment="Center" BorderThickness="3" BorderBrush="Sienna">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <UniformGrid Columns="5" Rows="5" />
@@ -92,17 +128,25 @@
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </Grid>
-            <Button Content="Est" x:Name="GoRightButton" Command="{Binding MoveToRight}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="76" Margin="408,224,13,224"/>
-            <Button Content="Ouest" x:Name="GoLeftButton" Command="{Binding MoveToLeft}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="76" Margin="12,224,409,224"/>
-            <Button Content="Sud" x:Name="GoBottomButton" Command="{Binding MoveToBottom}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="76" Margin="210,395,211,53"/>
-            <Button Content="Nord" x:Name="GoTopButton" Command="{Binding MoveToTop}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="76" Margin="210,53,211,395"/>
-            <Button Content="Fouiller la zone" Command="{Binding SearchInZone}" HorizontalAlignment="Left" Margin="0,438,0,0" VerticalAlignment="Top" Width="116" Height="32"/>
+            <Button x:Name="GoRightButton" Command="{Binding MoveToRight}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="42" Margin="408,224,47,211" Height="35">
+                <Image Source="/2NET_Gui;component/Ressources/UI/right_button.png"></Image>
+                </Button>
+            <Button  x:Name="GoLeftButton" Command="{Binding MoveToLeft}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="39" Margin="49,218,409,218" Height="34">
+                <Image Source="/2NET_Gui;component/Ressources/UI/left_button.png"></Image>
+            </Button>
+            <Button x:Name="GoBottomButton" Command="{Binding MoveToBottom}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"  HorizontalAlignment="Center"  VerticalAlignment="Center" Width="76" Margin="210,395,211,40" Height="35">
+                <Image Source="/2NET_Gui;component/Ressources/UI/bottom_button.png"></Image>
+            </Button>
+            <Button x:Name="GoTopButton" Command="{Binding MoveToTop}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"  HorizontalAlignment="Center"  VerticalAlignment="Center" Width="76" Margin="210,42,211,395" Height="33">
+                <Image Source="/2NET_Gui;component/Ressources/UI/top_button.png"></Image>
+            </Button>
+            <Button Content="Fouiller la zone" Command="{Binding SearchInZone}" HorizontalAlignment="Left" Margin="0,438,0,0" VerticalAlignment="Top" Width="138" Height="32"/>
         </Grid>
         <Grid Height="41" VerticalAlignment="Top" HorizontalAlignment="Right" Width="309">
-            <Label Content="Vie :" HorizontalAlignment="Left" Width="33" Margin="0,0,0,7" Height="26" VerticalAlignment="Bottom"/>
-            <Label Content="Experience :" VerticalAlignment="Center" HorizontalAlignment="Right" Width="73" Margin="0,8,100,7"/>
-            <Label Content="{Binding ActivePlayerManager.GetFormatedXp}" HorizontalAlignment="Left" Height="24" Margin="206,9,0,8" Width="93"/>
-            <Label Content="{Binding ActivePlayerManager.GetFormatedLife}" VerticalAlignment="Center" Height="24" Margin="33,9,173,8"/>
+            <Label Content="Vie :" HorizontalAlignment="Left" Width="44" Margin="0,0,0,10" Height="26" VerticalAlignment="Bottom" Foreground="White"/>
+            <Label Content="Niveau :" VerticalAlignment="Center" HorizontalAlignment="Right" Width="68" Margin="0,5,105,10" Foreground="White"/>
+            <Label Content="{Binding ActivePlayerManager.GetFormatedXp}" HorizontalAlignment="Left" Margin="204,5,0,7" Width="83" Foreground="White"/>
+            <Label Content="{Binding ActivePlayerManager.GetFormatedLife}" VerticalAlignment="Center" Height="28" Margin="34,5,173,8" Foreground="White"/>
         </Grid>
 
     </Grid>

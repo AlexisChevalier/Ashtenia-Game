@@ -252,12 +252,23 @@ namespace _2NET_Gui.Managers
 
         public String GetFormatedLife
         {
-            get { return Player.Hp + " / " + Player.MaxHp; }
+            
+            get
+            {
+                if (Player.Hp <= 0)
+                {
+                    return "0 / " + Player.MaxHp;
+                }
+                else
+                {
+                    return Player.Hp + " / " + Player.MaxHp; 
+                }
+            }
         }
 
         public String GetFormatedXp
         {
-            get { return (Math.Floor((double) Player.Xp/100)) + " (" + Player.MaxHp + ")"; }
+            get { return (Math.Floor((double)Player.Xp / 100)) + " (" + Player.Xp + " Exp)"; }
         }
 
         public object GetLevel

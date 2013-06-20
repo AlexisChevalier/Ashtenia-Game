@@ -118,3 +118,5 @@ C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Gui\obj\Debug\Views\
 C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Gui\obj\Debug\2NET_Gui.g.resources
 C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Gui\obj\Debug\_2NET_Gui.Properties.Resources.resources
 C:\Users\Chevalier Alexis\Documents\GitHub\ASHTENIA_V2\2NET_Gui\obj\Debug\2NET_Gui.csproj.GenerateResource.Cache
+C:\Users\Alexis Chevalier\Documents\github\ashtenia_v2\2NET_Gui\obj\Debug\Views\LoosePage.baml
+C:\Users\Alexis Chevalier\Documents\github\ashtenia_v2\2NET_Gui\obj\Debug\Views\LoosePage.g.cs

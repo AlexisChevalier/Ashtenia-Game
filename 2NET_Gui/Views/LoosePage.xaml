@@ -1,0 +1,51 @@
+﻿<Page x:Class="_2NET_Gui.Views.LoosePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="700"
+      MinHeight="500" MinWidth="700"
+	Title="LoosePage" FontFamily="Lucida Blackletter" FontSize="15">
+
+
+    <Page.Background>
+        <ImageBrush ImageSource="/2NET_Gui;component/Ressources/UI/paper background.png"/>
+    </Page.Background>
+
+    <Grid>
+        <Grid HorizontalAlignment="Center" Height="400" VerticalAlignment="Center" Width="400">
+            <TextBlock HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="217" Width="400" Margin="0,80,0,0">
+                <Run Foreground="#FF000000" Text="Dans un extrême élan de bonté, le gardien des tombeaux vous propose de repartir"/>
+                <Run Foreground="#FF000000" Language="fr-fr" Text=" "/>
+                <Run Foreground="#FF000000" Text="vers le monde "/>
+                <Run Foreground="#FF000000" Language="fr-fr" Text="des vivants "/>
+                <Run Foreground="#FF000000" Text="afin de poursuivre votre glorieuse quête."/>
+                <LineBreak/>
+                <Run Foreground="#FF000000" />
+                <LineBreak/>
+                <Run Foreground="#FF000000" Text="Mais ceci a un prix, il vous propose donc deux choix :"/>
+                <LineBreak/>
+                <Run Foreground="#FF000000"/>
+                <LineBreak/>
+                <Run Foreground="#FF000000" Language="fr-fr" Text="Soit v"/>
+                <Run Foreground="#FF000000" Text="ous "/>
+                <Run Foreground="#FF000000" Language="fr-fr" Text="reprenez vie"/>
+                <Run Foreground="#FF000000" Text=", mais perdez 3 niveaux et tous "/>
+                <Run Foreground="#FF000000" Language="fr-fr" Text="vos objets durement acquis."/>
+                <LineBreak/>
+                <Run Foreground="#FF000000" Text=""/>
+                <LineBreak/>
+                <Run Foreground="#FF000000" Language="fr-fr" Text="Soit vous préfèrer mourrir et laisser un nouvel aventurier continuer votre "/>
+                <Run Foreground="#FF000000" Text="quête"/>
+                <Run Foreground="#FF000000" Language="fr-fr" Text="."/>
+                <LineBreak/>
+                <Run Foreground="#FF000000" FontSize="12.6666666666667" FontFamily="Consolas"/>
+            </TextBlock>
+            <Label Content="Vous êtes mort !" VerticalAlignment="Top" Width="190" HorizontalAlignment="Center" FontSize="25"/>
+            <Button x:Name="StayAlive" Content="Reprendre vie" HorizontalAlignment="Left" Margin="70,326,0,0" VerticalAlignment="Top" Width="110" Click="StayAlive_Click"/>
+            <Button x:Name="Die" Content="Aller à la tombe" HorizontalAlignment="Right" Margin="0,326,70,0" VerticalAlignment="Top" Width="110" Click="Die_Click"/>
+        </Grid>
+
+    </Grid>
+</Page>
