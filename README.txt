@@ -1,9 +1,12 @@
-AVIS AU CORRECTEUR :
+Ashtenia Game
+=============
+
+Requiert Microsoft SQL Server installÃ© et fonctionnel
 
 Sont ici trois projets :
 
--> 2NET_Dal (Couche de données pour EF)
+-> 2NET_Dal (Couche de donnÃ©es pour EF)
 -> 2NET_Gui (Projet actuel, version WPF)
 -> 2NET_Project (Premier projet, version CLI)
 
-Il suffit de modifier app.config dans les trois projets pour rendre le systéme fonctionnel.
+Il suffit de modifier app.config dans les trois projets pour rendre le systÃ©me fonctionnel.
